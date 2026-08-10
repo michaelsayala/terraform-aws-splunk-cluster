@@ -66,8 +66,12 @@ terraform-aws-splunk-cluster/
 ├── provider.tf
 ├── variables.tf
 ├── outputs.tf
+├── key_pair.tf
 ├── terraform.tfvars.example
-├── versions.tf
+├── outputs.tf
+├── README.md
+├── LICENSE
+├── .gitignore
 │
 ├── modules/
 │
@@ -80,21 +84,34 @@ terraform-aws-splunk-cluster/
 │   │   └── outputs.tf
 │   │
 │   ├── security_groups/
-│   │   ├── cluster_manager.tf
-│   │   ├── indexer.tf
-│   │   ├── search_head.tf
-│   │   ├── deployer.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
+│       ├── cluster_manager_sg.tf
+│       ├── deployer_sg.tf
+│       ├── deployment_server_sg.tf
+│       ├── heavy_forwarder_sg.tf
+│       ├── indexer_sg.tf
+│       ├── license_manager_sg.tf
+│       ├── search_head_sg.tf
+│       ├── universal_forwarder_sg.tf
+│       ├── locals.tf
+│       ├── outputs.tf
+│       └── variables.tf
 │   │
 │   └── compute/
-│       ├── ec2.tf
+│       ├── cluster_manager.tf
+│       ├── deployer.tf
+│       ├── deployment_server.tf
+│       ├── heavy_forwarder.tf
+│       ├── indexer.tf
+│       ├── license_manager.tf
+│       ├── search_head.tf
+│       ├── universal_forwarder.tf
 │       ├── locals.tf
-│       ├── variables.tf
-│       └── outputs.tf
+│       ├── outputs.tf
+│       └── variables.tf
 │
 └── docs/
     └── architecture.png
+    └── terraform.md
 ```
 
 ---
