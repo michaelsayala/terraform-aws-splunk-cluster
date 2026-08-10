@@ -41,7 +41,7 @@ The distributed Splunk environment includes:
 ---
 
 # High-Level Architecture
-![test](ps://github.com/michaelsayala/terraform-aws-splunk-cluster/blob/main/docs/architecture.png)
+![Splunk AWS Architecture](docs/architecture.png)
 
 ---
 
