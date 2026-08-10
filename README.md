@@ -40,8 +40,8 @@ The distributed Splunk environment includes:
 
 ---
 
-# High-Level Architecture
-![Splunk AWS Architecture](docs/architecture.png)
+# Architecture Overview
+![Splunk Enterprise Distributed Architecture](docs/architecture.png)
 
 ---
 
