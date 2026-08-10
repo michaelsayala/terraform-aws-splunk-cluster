@@ -5,6 +5,9 @@
 crash.log
 crash.*.log
 
+# Terraform environments
+environments/
+
 # Terraform plans
 *.tfplan
 tfplan
