@@ -1,4 +1,5 @@
 resource "aws_security_group" "license_manager-sg" {
+  count = var.enable_license_manager ? 1 : 0
   name        = local.license_manager_sg_name
   description = "Security group for Splunk License Manager"
   vpc_id      = var.vpc_id
@@ -8,7 +9,7 @@ resource "aws_security_group" "license_manager-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.ssh_allowed_cidrs
   }
 
   ingress {
@@ -16,7 +17,7 @@ resource "aws_security_group" "license_manager-sg" {
     from_port   = 8000
     to_port     = 8000
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.splunk_web_allowed_cidrs
   }
 
   ingress {

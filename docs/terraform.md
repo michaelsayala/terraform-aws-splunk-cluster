@@ -28,6 +28,14 @@ No requirements.
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | AWS availability zone | `string` | n/a | yes |
 | <a name="input_ec2_os"></a> [ec2\_os](#input\_ec2\_os) | AMI ID for EC2 instances | `string` | n/a | yes |
+| <a name="input_enable_cluster_manager"></a> [enable\_cluster\_manager](#input\_enable\_cluster\_manager) | n/a | `bool` | `false` | no |
+| <a name="input_enable_deployer"></a> [enable\_deployer](#input\_enable\_deployer) | n/a | `bool` | `false` | no |
+| <a name="input_enable_deployment_server"></a> [enable\_deployment\_server](#input\_enable\_deployment\_server) | n/a | `bool` | `false` | no |
+| <a name="input_enable_heavy_forwarder"></a> [enable\_heavy\_forwarder](#input\_enable\_heavy\_forwarder) | n/a | `bool` | `false` | no |
+| <a name="input_enable_indexer"></a> [enable\_indexer](#input\_enable\_indexer) | n/a | `bool` | `false` | no |
+| <a name="input_enable_license_manager"></a> [enable\_license\_manager](#input\_enable\_license\_manager) | n/a | `bool` | `false` | no |
+| <a name="input_enable_search_head"></a> [enable\_search\_head](#input\_enable\_search\_head) | n/a | `bool` | `false` | no |
+| <a name="input_enable_universal_forwarder"></a> [enable\_universal\_forwarder](#input\_enable\_universal\_forwarder) | n/a | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Deployment environment (dev, test, prod) | `string` | n/a | yes |
 | <a name="input_key_pair"></a> [key\_pair](#input\_key\_pair) | AWS EC2 key pair name | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Name of the project | `string` | n/a | yes |

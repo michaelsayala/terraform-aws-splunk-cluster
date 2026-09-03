@@ -1,4 +1,5 @@
 resource "aws_security_group" "deployment_server-sg" {
+  count = var.enable_deployment_server ? 1 : 0
   name        = local.deployment_server_sg_name
   description = "Security group for Splunk Deployment Server"
   vpc_id      = var.vpc_id

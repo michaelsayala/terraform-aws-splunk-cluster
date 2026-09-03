@@ -1,4 +1,5 @@
 resource "aws_security_group" "universal_forwarder-sg" {
+  count = var.enable_universal_forwarder ? 1 : 0
   name        = local.universal_forwarder_sg_name
   description = "Security group for Splunk Universal Forwarder"
   vpc_id      = var.vpc_id

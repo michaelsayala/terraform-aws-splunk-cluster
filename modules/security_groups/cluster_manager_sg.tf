@@ -1,4 +1,5 @@
 resource "aws_security_group" "cluster_manager-sg" {
+  count = var.enable_cluster_manager ? 1 : 0
   name        = local.cluster_manager_sg_name
   description = "Security group for Splunk Cluster Manager"
   vpc_id      = var.vpc_id

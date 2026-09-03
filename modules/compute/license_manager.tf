@@ -1,5 +1,5 @@
 resource "aws_instance" "license_manager" {
-
+  count = var.enable_license_manager ? 1 : 0
   ami           = var.ec2_os
   instance_type = var.splunk_components["license_manager"].instance_type
 

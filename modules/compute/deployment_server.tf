@@ -1,5 +1,5 @@
 resource "aws_instance" "deployment_server" {
-
+  count = var.enable_deployment_server ? 1 : 0
   ami           = var.ec2_os
   instance_type = var.splunk_components["deployment_server"].instance_type
 

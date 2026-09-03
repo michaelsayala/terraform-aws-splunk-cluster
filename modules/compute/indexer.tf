@@ -1,6 +1,5 @@
 resource "aws_instance" "indexers" {
-
-  for_each = toset(local.indexers)
+  for_each = var.enable_indexer ? toset(local.indexers) : toset([])
 
   ami           = var.ec2_os
   instance_type = var.splunk_components["indexers"].instance_type

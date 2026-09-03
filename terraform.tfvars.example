@@ -1,4 +1,24 @@
 #############################################
+# Splunk Component Deployment Controls
+#############################################
+ 
+enable_cluster_manager = true
+
+enable_deployer = true
+
+enable_deployment_server = true
+
+enable_heavy_forwarder = true
+
+enable_indexer = true
+
+enable_license_manager = true
+
+enable_search_head = true
+
+enable_universal_forwarder = true
+
+#############################################
 # Project
 #############################################
 
@@ -80,7 +100,7 @@ splunk_components = {
 
   heavy_forwarders = {
     instance_type = "t2.micro"
-    root_volume   = 50
+    root_volume   = 20
     public_ip     = true
   }
 

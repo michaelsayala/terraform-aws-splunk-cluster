@@ -1,5 +1,5 @@
 resource "aws_instance" "cluster_manager" {
-
+  count = var.enable_cluster_manager ? 1 : 0
   ami           = var.ec2_os
   instance_type = var.splunk_components["cluster_manager"].instance_type
 

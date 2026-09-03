@@ -1,6 +1,5 @@
 resource "aws_instance" "heavy_forwarders" {
-
-  for_each = toset(local.heavy_forwarders)
+  for_each = var.enable_heavy_forwarder ? toset(local.heavy_forwarders) : toset([])
 
   ami           = var.ec2_os
   instance_type = var.splunk_components["heavy_forwarders"].instance_type

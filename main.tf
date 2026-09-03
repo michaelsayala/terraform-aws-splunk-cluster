@@ -21,6 +21,15 @@ module "security_groups" {
 
   source = "./modules/security_groups"
 
+  enable_cluster_manager = var.enable_cluster_manager
+  enable_deployer = var.enable_deployer
+  enable_deployment_server = var.enable_deployment_server
+  enable_heavy_forwarder = var.enable_heavy_forwarder
+  enable_indexer = var.enable_indexer
+  enable_license_manager = var.enable_license_manager
+  enable_search_head = var.enable_search_head
+  enable_universal_forwarder = var.enable_universal_forwarder
+
   project_name = var.project_name
   environment  = var.environment
   common_tags = local.common_tags
@@ -37,6 +46,15 @@ module "security_groups" {
 #############################################
 module "compute" {
   source            = "./modules/compute"
+
+  enable_cluster_manager = var.enable_cluster_manager
+  enable_deployer = var.enable_deployer
+  enable_deployment_server = var.enable_deployment_server
+  enable_heavy_forwarder = var.enable_heavy_forwarder
+  enable_indexer = var.enable_indexer
+  enable_license_manager = var.enable_license_manager
+  enable_search_head = var.enable_search_head
+  enable_universal_forwarder = var.enable_universal_forwarder
 
   project_name = var.project_name
   environment  = var.environment

@@ -1,4 +1,5 @@
 resource "aws_security_group" "search_head_cluster-sg" {
+  count = var.enable_search_head ? 1 : 0
   name        = local.search_head_cluster_sg_name
   description = "Security group for Splunk Search Head Cluster"
   vpc_id      = var.vpc_id
@@ -8,7 +9,7 @@ resource "aws_security_group" "search_head_cluster-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.ssh_allowed_cidrs
   }
 
   ingress {
@@ -16,7 +17,7 @@ resource "aws_security_group" "search_head_cluster-sg" {
     from_port   = 8000
     to_port     = 8000
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.splunk_web_allowed_cidrs
   }
 
   ingress {

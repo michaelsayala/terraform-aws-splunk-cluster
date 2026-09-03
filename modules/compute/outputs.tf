@@ -1,33 +1,33 @@
 output "cluster_manager_public_ip" {
-  value = aws_instance.cluster_manager.public_ip
+  value = var.enable_cluster_manager ? aws_instance.cluster_manager[0].public_ip : null
 }
 
 output "cluster_manager_private_ip" {
-  value = aws_instance.cluster_manager.private_ip
+  value = var.enable_cluster_manager ? aws_instance.cluster_manager[0].private_ip : null
 }
 
 output "deployer_public_ip" {
-  value = aws_instance.deployer.public_ip
+  value = var.enable_deployer ? aws_instance.deployer[0].public_ip : null
 }
 
 output "deployer_private_ip" {
-  value = aws_instance.deployer.private_ip
+  value = var.enable_deployer ? aws_instance.deployer[0].private_ip : null
 }
 
 output "license_manager_public_ip" {
-  value = aws_instance.license_manager.public_ip
+  value = var.enable_license_manager ? aws_instance.license_manager[0].public_ip : null
 }
 
 output "license_manager_private_ip" {
-  value = aws_instance.license_manager.private_ip
+  value = var.enable_license_manager ? aws_instance.license_manager[0].private_ip : null
 }
 
 output "deployment_server_public_ip" {
-  value = aws_instance.deployment_server.public_ip
+  value = var.enable_deployment_server ? aws_instance.deployment_server[0].public_ip : null
 }
 
 output "deployment_server_private_ip" {
-  value = aws_instance.deployment_server.private_ip
+  value = var.enable_deployment_server ? aws_instance.deployment_server[0].private_ip : null
 }
 
 output "indexer_public_ips" {

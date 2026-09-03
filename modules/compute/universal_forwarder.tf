@@ -1,6 +1,5 @@
 resource "aws_instance" "universal_forwarders" {
-
-  for_each = toset(local.universal_forwarders)
+  for_each = var.enable_universal_forwarder ? toset(local.universal_forwarders) : toset([])
 
   ami           = var.ec2_os
   instance_type = var.splunk_components["universal_forwarders"].instance_type

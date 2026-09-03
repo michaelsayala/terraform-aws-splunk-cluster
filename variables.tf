@@ -92,3 +92,47 @@ variable "splunk_components" {
   }))
 
 }
+
+#############################################
+# Splunk Component Deployment Controls
+#############################################
+
+variable "enable_cluster_manager" {
+  type    = bool
+  default = false
+}
+
+variable "enable_deployer" {
+  type    = bool
+  default = false
+}
+
+variable "enable_deployment_server" {
+  type    = bool
+  default = false
+}
+
+variable "enable_heavy_forwarder" {
+  type    = bool
+  default = false
+}
+
+variable "enable_indexer" {
+  type    = bool
+  default = false
+}
+
+variable "enable_license_manager" {
+  type    = bool
+  default = false
+}
+
+variable "enable_search_head" {
+  type    = bool
+  default = false
+}
+
+variable "enable_universal_forwarder" {
+  type    = bool
+  default = false
+}
